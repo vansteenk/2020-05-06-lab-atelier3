@@ -17,11 +17,12 @@ def help: #lire le fichier help.txt
 		print(fichier.read())
 
 def creer (connect, chemin): #MKD (dossier)
-	connect.mkd(chemin)
+	mkd=connect.mkd(chemin)
+	print mkd
 
 def renommer (connect, fromname, toname): #RNFR
-	connect.rename(fromname, toname)
-
+	rename=connect.rename(fromname, toname)
+	print rename
 
 def supprimerFichier (connect, filename): #DELE 
 	
@@ -35,7 +36,6 @@ def lister (connect, dirname): #LIST
 	rep=connect.dir(dirname)
 	print (rep)
 
-
 def envoyer (connect, fichier): #STOR
 
 	ouverture = open(fichier, 'rb') # on ouvre le fichier 
@@ -44,7 +44,8 @@ def envoyer (connect, fichier): #STOR
 
 def localisation (connect): #PWD
 
-	connect.pwd() #on retourne le chemin du dossier courant
+	path=connect.pwd() #on retourne le chemin du dossier courant
+	print (path)
 
 def se_deplacer (connect, chemin): #CWD
 
