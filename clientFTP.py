@@ -94,6 +94,8 @@ def choix_cmd (cmd):
 	return switcher.get(cmd, lambda: "no valid command")
 
 
+cmdsplit[0:2]=0
+
 connect=connexion()
 
 print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
