@@ -76,7 +76,7 @@ def connexion()
 		except:
 			print("Erreur. Recommencez. ")
 			statut=False
-return (connect)
+	return (connect)
 
 def choix_cmd (cmd):
 	switcher = {
@@ -88,7 +88,8 @@ def choix_cmd (cmd):
 		'stor': envoyer,
 		'pwd': localisation,
 		'cwd': se_deplacer,
-		'quit': deconnexion
+		'quit': deconnexion,
+		'help': help
 		}
 	return switcher.get(cmd, lambda: "no valid command")
 
