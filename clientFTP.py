@@ -102,7 +102,7 @@ print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
 commande=input(":>>")
 
 cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
-cmd=cmdsplit[0]
+print (cmdsplit)
 cmd=cmd.lower()
 arg1=cmdsplit[1]
 arg2=cmdsplit[2]
