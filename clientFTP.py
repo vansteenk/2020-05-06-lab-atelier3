@@ -22,8 +22,6 @@ def creer (connect, chemin): #MKD (dossier)
 def renommer (connect, fromname, toname): #RNFR
 	connect.rename(fromname, toname)
 
-def deplacer (connect, old_chemin, new_chemin): #MV
-	connect.mk
 
 def supprimerFichier (connect, filename): #DELE 
 	
@@ -44,11 +42,22 @@ def envoyer (connect, fichier): #STOR
 	connect.storbinary('STOR '+fichier, ouverture) # ici (où connect est encore la variable de la connexion), on indique le fichier à envoyer
 	ouverture.close() # on ferme le fichier
 
+def localisation (connect): #PWD
 
-def se_deplacer: #CWD
+	connect.pwd() #on retourne le chemin du dossier courant
 
-# Quit
-# PWD
+def se_deplacer (connect, chemin): #CWD
+
+	connect.cwd(chemin) # On se deplace dans le repertoire indiqué
+
+def quitter (connect):
+
+	try:
+		connect.quit() #On se deconnecte proprement
+
+	except:
+		connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
+
 
 #Programme principal
 
@@ -58,7 +67,7 @@ while statut!=True :
 
 	#Demande hostname, username et pwd
 	hostname=input("Hostname : ") # Addresse du serveur FTP
-	username="root"
+	username="user"
 	password=getpass()
 
 	#tentative de connexion
