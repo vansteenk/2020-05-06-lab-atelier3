@@ -60,7 +60,7 @@ def deconnexion (connect, x, y):
 	except:
 		connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
 
-def connexion()
+def connexion() :
 	statut=False
 	while statut!=True : #une boucle de connexion avec un "statut" retournant l'état de connexion (True/False)
 		hostname="pc2" # Addresse du serveur FTP
@@ -93,7 +93,7 @@ def choix_cmd (cmd):
 		}
 	return switcher.get(cmd, lambda: "no valid command")
 
-def main()
+def main():
 
 	connect=connexion()
 
