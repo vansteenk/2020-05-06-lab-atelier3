@@ -12,47 +12,47 @@ from getpass import getpass
 
 
 #Fonction nanuel, pour aider avec les differentes commandes
-def help: #lire le fichier help.txt
+def help (x,y,z): #lire le fichier help.txt
 	with open("help.txt", "r") as fichier:
 		print(fichier.read())
 
-def creer (connect, chemin): #MKD (dossier)
+def creer (connect, chemin, x): #MKD (dossier)
 	mkd=connect.mkd(chemin)
-	print mkd
+	print (mkd)
 
 def renommer (connect, fromname, toname): #RNFR
 	rename=connect.rename(fromname, toname)
-	print rename
+	print (rename)
 
-def supprimerFichier (connect, filename): #DELE 
+def supprimerFichier (connect, filename, x): #DELE 
 	
 	connect.delete(filename) #fichier
 
-def supprimerDossier (connect, dirname): #RMD 
+def supprimerDossier (connect, dirname, x): #RMD 
 	
 	connect.rmd(dirname) #dossier
 
-def lister (connect, dirname): #LIST
+def lister (connect, dirname, x): #LIST
 	rep=connect.dir(dirname)
 	print (rep)
 
-def envoyer (connect, fichier): #STOR
+def envoyer (connect, fichier, x): #STOR
 
 	ouverture = open(fichier, 'rb') # on ouvre le fichier 
 	connect.storbinary('STOR '+fichier, ouverture) # ici (où connect est encore la variable de la connexion), on indique le fichier à envoyer
 	ouverture.close() # on ferme le fichier
 
-def localisation (connect): #PWD
+def localisation (connect, x, y): #PWD
 
 	path=connect.pwd() #on retourne le chemin du dossier courant
 	print (path)
 
-def se_deplacer (connect, chemin): #CWD
+def se_deplacer (connect, chemin, x): #CWD
 
 	connect.cwd(chemin) # On se deplace dans le repertoire indiqué
-	localisation(connect)
+	localisation(connect,0,0)
 
-def deconnexion (connect):
+def deconnexion (connect, x, y):
 
 	try:
 		connect.quit() #On se deconnecte proprement
@@ -88,10 +88,10 @@ def main()
 
 	cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
 	cmd=cmdsplit[0]
+	cmd=cmd.lower()
 	arg1=cmdsplit[1]
 	arg2=cmdsplit[2]
 
-	deconnexion(connect)
 
 
 
