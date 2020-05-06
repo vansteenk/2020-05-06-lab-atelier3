@@ -16,3 +16,5 @@ while statut!=True :
 	statut=True
 	bienvenue=connect.getwelcome() # on récupère le "message de bienvenue"
 	print(bienvenue)
+	connect.pwd()
+	
