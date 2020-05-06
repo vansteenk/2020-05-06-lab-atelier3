@@ -2,6 +2,10 @@
 
 # -*- coding: utf-8 -*-
 
+import ftplib
+from getpass import getpass
+
+
 statut=False
 while statut!=True :
   hostname=input("Hostname : ") # Addresse du serveur FTP
