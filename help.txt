@@ -1,24 +1,19 @@
 Voici les différentes commandes possibles : 
 
-cwd ..								Remonter dans le répertoire parent
-cwd /CHEMIN/DU/NOUVEAU/REPERTOIRE	Changer de répertoire de travail
-cwd ./SOUS_REPERTOIRE				Descendre dans un répertoire
+cwd /CHEMIN/DU/NOUVEAU/REPERTOIRE	     Changer de répertoire de travail
+cwd ..                                 Repertoire parent
 
-dele MON_FICHIER					Supprimer le fichier nommé du réperetoire courant
-dele /CHEMIN/VERS/MON/FICHIER		Supprimer le fichier
+dele MON_FICHIER					             Supprimer le fichier nommé du réperetoire courant
 
-list /CHEMIN/VERS/LE/REPERTOIRE		Lister le contenu du repertoire
-list								Lister le contenu du repertoire courant
+list /NOM/DU/REPERTOIRE	               Lister le contenu du repertoire
+list								                   Lister le contenu du repertoire courant
 
-mkd /CHEMIN/DU/NOUVEAU/REPERTOIRE/NOM	Créer un nouveau répertoire
-mkd NOM_REPERTOIRE						Créer un répertoire dans le répertoire courant
+mkd /CHEMIN/DU/NOUVEAU/REPERTOIRE/NOM	 Créer un nouveau répertoire
 
-rmd MON_DOSSIER						Supprimer le répertoire nommé du réperetoire courant
-rmd /CHEMIN/VERS/MON/DOSSIER		Supprimer le répertoire
+rmd MON_DOSSIER						             Supprimer le répertoire
 
-rnfr NEW_NOM						Renomme le répertoire/fichier courant
-rnfr NEW_NOM ANCIEN_NOM				Renomme un répertoire/fichier contenu dans le répertoire courant
+rnfr NEW_NOM ANCIEN_NOM				         Renomme un répertoire/fichier
 
-stor NOM_FICHIER					Copie le fichier (répertoire courant client) dans le répertoire client (serveur)		
+stor NOM_FICHIER					             Copie le fichier (répertoire courant client) dans le répertoire client (serveur)		
 
-mv /CHEMIN/ORIGINE /NOUVEAU/CHEMIN	Déplace le fichier ou le dossier
+pwd                                    Affiche la position dans l'arborescence
