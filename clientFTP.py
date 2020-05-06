@@ -56,11 +56,10 @@ def deconnexion (connect, x, y):
 
 	try:
 		connect.quit() #On se deconnecte proprement
-		break
 
 	except:
 		connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
-		break
+
 	
 			
 def connexion() :
