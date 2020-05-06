@@ -94,7 +94,7 @@ def choix_cmd (cmd):
 	return switcher.get(cmd, lambda: "no valid command")
 
 
-cmdsplit=[",","]
+cmdsplit=[' ',' ',' ']
 
 connect=connexion()
 
