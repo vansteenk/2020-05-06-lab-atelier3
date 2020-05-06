@@ -103,6 +103,7 @@ commande=input(":>>")
 
 cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
 print (cmdsplit)
+cmd=cmdsplit[0]
 cmd=cmd.lower()
 arg1=cmdsplit[1]
 arg2=cmdsplit[2]
