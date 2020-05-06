@@ -13,7 +13,7 @@ while statut!=True :
 	
 	#tentative de connexion
 	connect=ftplib.FTP(hostname) # connect est la variable de connexion
-	connect.login()
+	connect.login(username,password)
 	statut=True
 	bienvenue=connect.getwelcome() # on récupère le "message de bienvenue"
 	print(bienvenue)
