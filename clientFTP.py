@@ -95,47 +95,6 @@ def main()
 
 
 
-################################################################
-#On teste si la cmd est MV
-if commande.lower[0:1]=="mv":
-	#On cherche l'espace censé séparer les 2 arguments(chemins des dossiers/fichier)
-	i=0
-	for elt in commande[3:-1]:
-		if elt==" ":
-			argument1=commande[3:(i-1)]
-			argument2=commande[(i+1):-1]
-			break
-		i++
-	#Si on a trouvé un espace, on envoie les arguments dans la fonction
-	if i < len(commande[3:-1]):
-		deplacer(argument1, argument1)
-	#Sinon on revient au debut de la boucle MAIN
-	else:
-		print ("Erreur de syntaxe. Référez vous à help. ")
-		continue
-
-elif commande.lower[0:2]=="cwd":
-
-elif commande.lower[0:2]=="rmd":
-
-elif commande.lower[0:2]=="mkd":
-
-elif commande.lower[0:3]=="stor":
-
-elif commande.lower[0:3]=="list":
-
-elif commande.lower[0:3]=="dele":
-
-elif commande.lower[0:3]=="rnfr":
-
-elif commande.lower[0:3]=="help":
-
-else:
-	print("Commande inconnue.")
-	continue
-
-
-
 
 
 
