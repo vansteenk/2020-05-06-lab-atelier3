@@ -61,21 +61,21 @@ def deconnexion (connect):
 		connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
 
 def connexion()
-statut=False
-while statut!=True : #une boucle de connexion avec un "statut" retournant l'état de connexion (True/False)
-	hostname="pc2" # Addresse du serveur FTP
-	username="user"
-	password=getpass()
+	statut=False
+	while statut!=True : #une boucle de connexion avec un "statut" retournant l'état de connexion (True/False)
+		hostname="pc2" # Addresse du serveur FTP
+		username="user"
+		password=getpass()
 	
-	#tentative de connexion
-	try:
-		connect=ftplib.FTP(hostname,username,password) # connect est la variable de connexion
-		statut=True
-		bienvenue=connect.getwelcome() # on récupère le "message de bienvenue"
-		print(bienvenue + "- Connexion à " + hostname + " établie")
-	except:
-		print("Erreur. Recommencez. ")
-		statut=False
+		#tentative de connexion
+		try:
+			connect=ftplib.FTP(hostname,username,password) # connect est la variable de connexion
+			statut=True
+			bienvenue=connect.getwelcome() # on récupère le "message de bienvenue"
+			print(bienvenue + "- Connexion à " + hostname + " établie")
+		except:
+			print("Erreur. Recommencez. ")
+			statut=False
 return (connect)
 
 
@@ -90,7 +90,7 @@ def main()
 	cmd=cmdsplit[0]
 	arg1=cmdsplit[1]
 	arg2=cmdsplit[2]
-	
+
 	deconnexion(connect)
 
 
