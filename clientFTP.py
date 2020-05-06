@@ -59,7 +59,8 @@ def deconnexion (connect, x, y):
 
 	except:
 		connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
-
+	break
+			
 def connexion() :
 	statut=False
 	while statut!=True : #une boucle de connexion avec un "statut" retournant l'état de connexion (True/False)
@@ -96,33 +97,34 @@ def choix_cmd (cmd):
 
 
 connect=connexion()
+while 1 :
+		
+	print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
+	commande=input(":>>")
 
-print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
-commande=input(":>>")
+	cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
 
-cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
-
-if len(cmdsplit)==0 or len(cmdsplit)>3:
+	if len(cmdsplit)==0 or len(cmdsplit)>3:
 	print("Erreur")
 
-elif len(cmdsplit)==1:
-	cmd=cmdsplit[0]
-	cmd=cmd.lower()
-	arg1=0
-	arg2=0
-elif len(cmdsplit)==2:
-	cmd=cmdsplit[0]
-	cmd=cmd.lower()
-	arg1=cmdsplit[1]
-	arg=0
-elif len(cmdsplit)==3:
-	cmd=cmdsplit[0]
-	cmd=cmd.lower()
-	arg1=cmdsplit[1]
-	arg2=cmdsplit[2]
+	elif len(cmdsplit)==1:
+		cmd=cmdsplit[0]
+		cmd=cmd.lower()
+		arg1=0
+		arg2=0
+	elif len(cmdsplit)==2:
+		cmd=cmdsplit[0]
+		cmd=cmd.lower()
+		arg1=cmdsplit[1]
+		arg2=0
+	elif len(cmdsplit)==3:
+		cmd=cmdsplit[0]
+		cmd=cmd.lower()
+		arg1=cmdsplit[1]
+		arg2=cmdsplit[2]
 
-func = choix_cmd(cmd)
-func(connect, arg1, arg2)
+	func = choix_cmd(cmd)
+	func(connect, arg1, arg2)
 
 
 
