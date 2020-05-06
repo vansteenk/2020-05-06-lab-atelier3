@@ -102,7 +102,7 @@ commande=input(":>>")
 
 cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
 
-if cmdsplit.length==0 || cmdsplit.length>3:
+if cmdsplit.length==0 or cmdsplit.length>3:
 	print("Erreur")
 
 if cmdsplit.length==1:
