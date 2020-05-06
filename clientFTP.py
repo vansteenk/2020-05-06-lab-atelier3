@@ -65,7 +65,7 @@ def connexion() :
 	while statut!=True : #une boucle de connexion avec un "statut" retournant l'état de connexion (True/False)
 		hostname="pc2" # Addresse du serveur FTP
 		username="user"
-		password=getpass()
+		password="testtest"
 	
 		#tentative de connexion
 		try:
