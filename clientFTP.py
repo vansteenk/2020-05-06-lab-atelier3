@@ -59,8 +59,8 @@ def deconnexion (connect, x, y):
 
 	except:
 		connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
-	while 1:
-		break
+
+	
 	
 			
 def connexion() :
@@ -97,9 +97,9 @@ def choix_cmd (cmd):
 	return switcher.get(cmd, lambda: "no valid command")
 
 
-
+cmd="help"
 connect=connexion()
-while 1 :
+while cmd!="quit" :
 		
 	print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
 	commande=input(":>>")
