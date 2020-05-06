@@ -105,7 +105,7 @@ while 1 :
 	cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
 
 	if len(cmdsplit)==0 or len(cmdsplit)>3:
-	print("Erreur")
+		print("Erreur")
 
 	elif len(cmdsplit)==1:
 		cmd=cmdsplit[0]
