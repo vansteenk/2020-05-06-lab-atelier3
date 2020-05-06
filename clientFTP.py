@@ -94,7 +94,6 @@ def choix_cmd (cmd):
 	return switcher.get(cmd, lambda: "no valid command")
 
 
-cmdsplit=['','','']
 
 connect=connexion()
 
@@ -102,11 +101,25 @@ print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
 commande=input(":>>")
 
 cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
-print (cmdsplit)
-cmd=cmdsplit[0]
-cmd=cmd.lower()
-arg1=cmdsplit[1]
-arg2=cmdsplit[2]
+
+if cmdsplit.length==0 || cmdsplit.length>3:
+	print("Erreur")
+
+if cmdsplit.length==1:
+	cmd=cmdsplit[0]
+	cmd=cmd.lower()
+	arg1=0
+	arg2=0
+elseif cmdsplit.length==2:
+	cmd=cmdsplit[0]
+	cmd=cmd.lower()
+	arg1=cmdsplit[1]
+	arg=0
+elseif cmdsplit.length==3:
+	cmd=cmdsplit[0]
+	cmd=cmd.lower()
+	arg1=cmdsplit[1]
+	arg2=cmdsplit[2]
 
 func = choix_cmd(cmd)
 func(connect, arg1, arg2)
