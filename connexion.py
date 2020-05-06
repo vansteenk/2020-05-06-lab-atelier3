@@ -3,19 +3,18 @@
 # -*- coding: utf-8 -*-
 
 import ftplib
-
+from getpass import getpass
 
 statut=False
 while statut!=True :
-	hostname=input("Hostname : ") # Addresse du serveur FTP
+	hostname="pc2" # Addresse du serveur FTP
 	username="user"
-	password="testtest"
+	password=getpass()
 	
 	#tentative de connexion
 	connect=ftplib.FTP(hostname) # connect est la variable de connexion
 	connect.login(username,password)
 	statut=True
 	bienvenue=connect.getwelcome() # on récupère le "message de bienvenue"
-	print(bienvenue)
-	local=connect.pwd()
-	print(local)
+	print(bienvenue + "- Connexion à " + hostname + " établie")
+
