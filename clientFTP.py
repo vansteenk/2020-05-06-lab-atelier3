@@ -2,10 +2,10 @@
 
 # -*- coding: utf-8 -*-
 
-#Date : 31/03/2020
-#Auteur : Cyril AUREJAC
-#Formation AJC Consultant Réseau - Module Python
-#Atelier Python : Création d'un client FTP
+#Date : 06.05.2020
+#Auteurs : Tayana / Sandrine / Maxime / Cyril
+#Formation AJC Consultant Réseau - Atelier 3
+#Création d'un client FTP
 
 import ftplib
 from getpass import getpass
@@ -50,8 +50,9 @@ def localisation (connect): #PWD
 def se_deplacer (connect, chemin): #CWD
 
 	connect.cwd(chemin) # On se deplace dans le repertoire indiqué
+	localisation(connect)
 
-def quitter (connect):
+def deconnexion (connect):
 
 	try:
 		connect.quit() #On se deconnecte proprement
@@ -59,33 +60,42 @@ def quitter (connect):
 	except:
 		connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
 
-
-#Programme principal
-
-#une boucle de connexion avec un "statut" retournant l'état de connexion (True/False)
+def connexion()
 statut=False
-while statut!=True :
-
-	#Demande hostname, username et pwd
-	hostname=input("Hostname : ") # Addresse du serveur FTP
+while statut!=True : #une boucle de connexion avec un "statut" retournant l'état de connexion (True/False)
+	hostname="pc2" # Addresse du serveur FTP
 	username="user"
 	password=getpass()
-
+	
 	#tentative de connexion
 	try:
-		connect=ftplib.FTP('hostname','username','password') # connect est la variable de connexion
+		connect=ftplib.FTP(hostname,username,password) # connect est la variable de connexion
 		statut=True
 		bienvenue=connect.getwelcome() # on récupère le "message de bienvenue"
-		print(bienvenue)
+		print(bienvenue + "- Connexion à " + hostname + " établie")
 	except:
 		print("Erreur. Recommencez. ")
 		statut=False
+return (connect)
 
 
-#boucle MAIN à rajouter
-print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
-commande=input(":>>")
+def main()
 
+	connect=connexion()
+
+	print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
+	commande=input(":>>")
+
+	cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
+	cmd=cmdsplit[0]
+	arg1=cmdsplit[1]
+	arg2=cmdsplit[2]
+	
+	deconnexion(connect)
+
+
+
+################################################################
 #On teste si la cmd est MV
 if commande.lower[0:1]=="mv":
 	#On cherche l'espace censé séparer les 2 arguments(chemins des dossiers/fichier)

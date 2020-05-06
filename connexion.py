@@ -12,9 +12,13 @@ while statut!=True :
 	password=getpass()
 	
 	#tentative de connexion
-	connect=ftplib.FTP(hostname) # connect est la variable de connexion
-	connect.login(username,password)
-	statut=True
-	bienvenue=connect.getwelcome() # on récupère le "message de bienvenue"
-	print(bienvenue + "- Connexion à " + hostname + " établie")
+	try:
+		connect=ftplib.FTP(hostname) # connect est la variable de connexion
+		connect.login(username,password)
+		statut=True
+		bienvenue=connect.getwelcome() # on récupère le "message de bienvenue"
+		print(bienvenue + "- Connexion à " + hostname + " établie")
+	except:
+		print("Erreur. Recommencez. ")
+		statut=False
 
