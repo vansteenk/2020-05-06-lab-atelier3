@@ -110,12 +110,12 @@ if cmdsplit.length==1:
 	cmd=cmd.lower()
 	arg1=0
 	arg2=0
-elseif cmdsplit.length==2:
+elsif cmdsplit.length==2:
 	cmd=cmdsplit[0]
 	cmd=cmd.lower()
 	arg1=cmdsplit[1]
 	arg=0
-elseif cmdsplit.length==3:
+elsif cmdsplit.length==3:
 	cmd=cmdsplit[0]
 	cmd=cmd.lower()
 	arg1=cmdsplit[1]
