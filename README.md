@@ -8,7 +8,7 @@ Fichiers code Python : clientftp.py
 Fichier annexe : help.txt
 ```
 
-**patch-1 branch : **
+** patch-1 branch : **
 
 > Optimisation de *clientFTP.py* 
 >   - [x] suppression des arguments inutiles des fonctions
