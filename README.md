@@ -27,13 +27,13 @@ Préparation d’une deuxième machine Debian, cette machine devra être sur le 
 
 
 On doit pouvoir :
-* Créer
-* Renommer
-* Déplacer
-* Supprimer des fichiers / dossiers
-* Se déplacer entre les répertoires
-* Lister leur contenu
-* Envoyer un fichier sur notre serveur
+- [x] Créer
+- [x] Renommer
+- [ ] Déplacer
+- [x] Supprimer des fichiers / dossiers
+- [x] Se déplacer entre les répertoires
+- [x] Lister leur contenu
+- [x] Envoyer un fichier sur notre serveur
 
 En voici donc la liste :
 * CWD *(change current directory) pour changer de répertoire de travail*
