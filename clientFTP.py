@@ -17,49 +17,52 @@ def help (connect): #lire le fichier help.txt
 		print(fichier.read())
 
 def creer (connect, chemin): #MKD (dossier)
-	mkd=connect.mkd(chemin)
-	print (mkd)
+	rep=connect.mkd(chemin)
+	return (rep)
 
 def renommer (connect, fromname, toname): #RNFR
-	rename=connect.rename(fromname, toname)
-	print (rename)
+	rep=connect.rename(fromname, toname)
+	return (rep)
 
 def supprimerFichier (connect, filename): #DELE 
-	connect.delete(filename) #fichier
+	rep=connect.delete(filename) #fichier
+	return (rep)
 
 def supprimerDossier (connect, dirname): #RMD 
-	connect.rmd(dirname) #dossier
+	rep=connect.rmd(dirname) #dossier
+	return (rep)
 
 def lister (connect, dirname): #LIST
 	rep=connect.dir(dirname)
-	print (rep)
+	return (rep)
 
 def envoyer (connect, fichier): #STOR
 	ouverture = open(fichier, 'rb') # on ouvre le fichier 
-	connect.storbinary('STOR '+fichier, ouverture) # ici (où connect est encore la variable de la connexion), on indique le fichier à envoyer
+	rep=connect.storbinary('STOR '+fichier, ouverture) # ici (où connect est encore la variable de la connexion), on indique le fichier à envoyer
 	ouverture.close() # on ferme le fichier
+	return (rep)
 
 def localisation (connect): #PWD
-	path=connect.pwd() #on retourne le chemin du dossier courant
-	print (path)
+	rep=connect.pwd() #on retourne le chemin du dossier courant
+	return (rep)
 
 def se_deplacer (connect, chemin): #CWD
-	connect.cwd(chemin) # On se deplace dans le repertoire indiqué
-	localisation(connect)
+	rep=connect.cwd(chemin) # On se deplace dans le repertoire indiqué
+	return (rep)
 
 def deconnexion (connect):
 	try:
-		connect.quit() #On se deconnecte proprement
+		rep=connect.quit() #On se deconnecte proprement
 	except:
-		connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
-
+		rep=connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
+	return (rep)
 			
 def connexion() :
 	statut=False
 	while statut!=True : #une boucle de connexion avec un "statut" retournant l'état de connexion (True/False)
-		hostname="pc2" # Addresse du serveur FTP
-		username="user"
-		password="testtest"
+		hostname=input("Hostname : ") # Addresse du serveur FTP
+		username=input("Username : ")
+		password=getpass()
 	
 		#tentative de connexion
 		try:
@@ -91,9 +94,10 @@ def choix_cmd (cmd):
 
 cmd="help"
 connect=connexion()
+print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
+
 while cmd!="quit" :
 		
-	print("Que souhaitez vous faire ? Tapez HELP pour plus d'informations")
 	commande=input(":>>")
 
 	cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
@@ -101,25 +105,28 @@ while cmd!="quit" :
 	try:
 		cmd=cmdsplit[0]
 		cmd=cmd.lower()
+		func = choix_cmd(cmd)
 		if len(cmdsplit)==1: # Aucun argument input par l'utilisateur
-			if cmd=="list":  # dans le cas où la commande sans argument entrée est "list" (commande necessitant 1 argument normalement)
-				arg1=connect.pwd()
-				func = choix_cmd(cmd)
-				func(connect, arg1)
+			if cmd=="list":  # cas particulier où la commande "list" est input sans argument
+				arg1=localisation(connect) # on recupère l'emplacement actuel
+				retour=func(connect, arg1)
 			else:
-				func = choix_cmd(cmd)
-				func(connect)
+				retour=func(connect)
 		
 		elif len(cmdsplit)==2: # 1 seul argument en input
 			arg1=cmdsplit[1]
-			func = choix_cmd(cmd)
-			func(connect, arg1)
+			if arg1=="?":
+				help(connect)
+			else :
+				retour=func(connect, arg1)
 		
 		elif len(cmdsplit)==3: # 2 arguments en input
 			arg1=cmdsplit[1]
 			arg2=cmdsplit[2]
-			func = choix_cmd(cmd)
-			func(connect, arg1, arg2)
+			retour=func(connect, arg1, arg2)
+
+		print(retour)
+
 	except:
 		print("Erreur. Tapez help.")
 
