@@ -13,6 +13,7 @@ Fichier annexe : help.txt
 > Optimisation de *clientFTP.py* 
 >   - [x] suppression des arguments inutiles des fonctions
 >   - [x] mise en conditions de l'utilisation du switcher en fonction des arguments
+>   - [x] mise en place d'un retour systematique après chaque commande
 
 > Mise en forme help.txt
 
