@@ -14,6 +14,8 @@ Fichier annexe : help.txt
 >   - [x] suppression des arguments inutiles des fonctions
 >   - [x] mise en conditions de l'utilisation du switcher en fonction des arguments
 >   - [x] mise en place d'un retour systematique après chaque commande
+>   - [x] insertion du cas particulier : commande "list" sans argument
+>   - [x] insertion du cas particulier : argumentation "?"
 
 > Mise en forme help.txt
 
