@@ -134,6 +134,7 @@ while cmd!="quit" :
 		print(retour)
 
 	except:
+		print(func)
 		print("Erreur. Tapez help.")
 
 
