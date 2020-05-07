@@ -11,10 +11,11 @@ Fichier annexe : help.txt
 
 > Voir *Master Branch* pour un code fonctionnel. Cette branche est un essai d'optimisation NON TESTE.
 
-> * Optimisation de clientFTP.py :
->  * suppression des arguments inutiles des fonctions
->  * mise en conditions de l'utilisation du switcher en fonction des arguments
-> * Mise en forme help.txt
+> Optimisation de *clientFTP.py* 
+>   - [x] suppression des arguments inutiles des fonctions
+>   - [x] mise en conditions de l'utilisation du switcher en fonction des arguments
+
+> Mise en forme help.txt
 
 
 
