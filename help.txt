@@ -17,3 +17,5 @@ rnfr NEW_NOM ANCIEN_NOM  > Renomme un répertoire/fichier
 stor NOM_FICHIER  > Copie le fichier (répertoire courant client) dans le répertoire client (serveur)		
 
 pwd  > Affiche la position dans l'arborescence
+
+quit > deconnexion propre et exit du programme
