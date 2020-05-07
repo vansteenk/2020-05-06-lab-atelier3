@@ -1,19 +1,19 @@
 Voici les différentes commandes possibles : 
 
-cwd /CHEMIN/DU/NOUVEAU/REPERTOIRE	     Changer de répertoire de travail
-cwd ..                                 Repertoire parent
+cwd /CHEMIN/DU/NOUVEAU/REPERTOIRE	 > Changer de répertoire de travail
+cwd ..  > Repertoire parent
 
-dele MON_FICHIER					             Supprimer le fichier nommé du réperetoire courant
+dele MON_FICHIER	> Supprimer le fichier nommé du réperetoire courant
 
-list /NOM/DU/REPERTOIRE	               Lister le contenu du repertoire
-list								                   Lister le contenu du repertoire courant
+list /NOM/DU/REPERTOIRE  > Lister le contenu du repertoire
+list  > Lister le contenu du repertoire courant
 
-mkd /CHEMIN/DU/NOUVEAU/REPERTOIRE/NOM	 Créer un nouveau répertoire
+mkd /CHEMIN/DU/NOUVEAU/REPERTOIRE/NOM	 > Créer un nouveau répertoire
 
-rmd MON_DOSSIER						             Supprimer le répertoire
+rmd MON_DOSSIER  > Supprimer le répertoire
 
-rnfr NEW_NOM ANCIEN_NOM				         Renomme un répertoire/fichier
+rnfr NEW_NOM ANCIEN_NOM  > Renomme un répertoire/fichier
 
-stor NOM_FICHIER					             Copie le fichier (répertoire courant client) dans le répertoire client (serveur)		
+stor NOM_FICHIER  > Copie le fichier (répertoire courant client) dans le répertoire client (serveur)		
 
-pwd                                    Affiche la position dans l'arborescence
+pwd  > Affiche la position dans l'arborescence
