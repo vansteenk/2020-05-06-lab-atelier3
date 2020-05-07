@@ -9,7 +9,7 @@ Lab Client FTP Python
 > Fichier annexe : help.txt
 
 
-``Voir Master Branch pour un code fonctionnel. Cette branch est un essai d'optimisation NON TESTE.``
+> Voir *Master Branch* pour un code fonctionnel. Cette branche est un essai d'optimisation NON TESTE.
 
 ```
 * Optimisation de clientFTP.py :
