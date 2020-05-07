@@ -106,7 +106,7 @@ while cmd!="quit" :
 				arg1=connect.pwd()
 				func = choix_cmd(cmd)
 				func(connect, arg1)
-			else
+			else:
 				func = choix_cmd(cmd)
 				func(connect)
 		
