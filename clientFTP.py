@@ -25,11 +25,9 @@ def renommer (connect, fromname, toname): #RNFR
 	print (rename)
 
 def supprimerFichier (connect, filename): #DELE 
-	
 	connect.delete(filename) #fichier
 
 def supprimerDossier (connect, dirname): #RMD 
-	
 	connect.rmd(dirname) #dossier
 
 def lister (connect, dirname): #LIST
@@ -37,31 +35,24 @@ def lister (connect, dirname): #LIST
 	print (rep)
 
 def envoyer (connect, fichier): #STOR
-
 	ouverture = open(fichier, 'rb') # on ouvre le fichier 
 	connect.storbinary('STOR '+fichier, ouverture) # ici (où connect est encore la variable de la connexion), on indique le fichier à envoyer
 	ouverture.close() # on ferme le fichier
 
 def localisation (connect): #PWD
-
 	path=connect.pwd() #on retourne le chemin du dossier courant
 	print (path)
 
 def se_deplacer (connect, chemin): #CWD
-
 	connect.cwd(chemin) # On se deplace dans le repertoire indiqué
-	localisation(connect,0,0)
+	localisation(connect)
 
 def deconnexion (connect):
-
 	try:
 		connect.quit() #On se deconnecte proprement
-
 	except:
 		connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
 
-	
-	
 			
 def connexion() :
 	statut=False
@@ -80,6 +71,7 @@ def connexion() :
 			print("Erreur. Recommencez. ")
 			statut=False
 	return (connect)
+
 
 def choix_cmd (cmd):
 	switcher = {
@@ -110,8 +102,13 @@ while cmd!="quit" :
 		cmd=cmdsplit[0]
 		cmd=cmd.lower()
 		if len(cmdsplit)==1: # Aucun argument input par l'utilisateur
-			func = choix_cmd(cmd)
-			func(connect)
+			if cmd=="list":  # dans le cas où la commande sans argument entrée est "list" (commande necessitant 1 argument normalement)
+				arg1=connect.pwd()
+				func = choix_cmd(cmd)
+				func(connect, arg1)
+			else
+				func = choix_cmd(cmd)
+				func(connect)
 		
 		elif len(cmdsplit)==2: # 1 seul argument en input
 			arg1=cmdsplit[1]
