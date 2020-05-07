@@ -91,8 +91,7 @@ def choix_cmd (cmd):
 		'pwd': localisation,
 		'cwd': se_deplacer,
 		'quit': deconnexion,
-		'help': help,
-		'scmd': sendcommande
+		'help': help
 		}
 	return switcher.get(cmd, lambda: "no valid command")
 
