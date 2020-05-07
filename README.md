@@ -3,10 +3,10 @@ Lab Client FTP Python
 
 **Contributeurs : Tayana / Sandrine / Maxime / Cyril**
 
-``` 
-* Fichiers code Python : clientftp.py
-* Fichier annexe : help.txt
-```
+
+> Fichiers code Python : clientftp.py
+> Fichier annexe : help.txt
+
 
 ``Etat : le code est fonctionnel. Il pourrait sans doute être optimisé (et agrémenté d'autres fonctions)``
 
