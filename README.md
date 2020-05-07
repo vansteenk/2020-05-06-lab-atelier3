@@ -36,7 +36,7 @@ Préparation d’une deuxième machine Debian, cette machine devra être sur le 
 On doit pouvoir :
 - [x] Créer
 - [x] Renommer
-- [ ] Déplacer
+- [X] Déplacer
 - [x] Supprimer des fichiers / dossiers
 - [x] Se déplacer entre les répertoires
 - [x] Lister leur contenu
