@@ -8,8 +8,7 @@ Fichiers code Python : clientftp.py
 Fichier annexe : help.txt
 ```
 
-
-> Voir *Master Branch* pour un code fonctionnel. Cette branche est un essai d'optimisation NON TESTE.
+**Voir *Master Branch* pour un code fonctionnel. Cette branche est un essai d'optimisation NON TESTE.**
 
 > Optimisation de *clientFTP.py* 
 >   - [x] suppression des arguments inutiles des fonctions
