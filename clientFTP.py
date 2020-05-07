@@ -57,7 +57,7 @@ def deconnexion (connect):
 		rep=connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
 	return (rep)
 			
-def sendcommande (connect, cmd)
+def sendcommande (connect, cmd):
 	rep=connect.sendcmd(cmd)
 	return(rep)
 
