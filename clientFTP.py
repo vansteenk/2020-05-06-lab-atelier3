@@ -57,6 +57,10 @@ def deconnexion (connect):
 		rep=connect.close() #si la deconnexion rencontre une erreur, on force la fermeture
 	return (rep)
 			
+def sendcommande (connect, cmd)
+	rep=connect.sendcmd(cmd)
+	return(rep)
+
 def connexion() :
 	statut=False
 	while statut!=True : #une boucle de connexion avec un "statut" retournant l'état de connexion (True/False)
@@ -87,7 +91,8 @@ def choix_cmd (cmd):
 		'pwd': localisation,
 		'cwd': se_deplacer,
 		'quit': deconnexion,
-		'help': help
+		'help': help,
+		'scmd': sendcommande
 		}
 	return switcher.get(cmd, lambda: "no valid command")
 

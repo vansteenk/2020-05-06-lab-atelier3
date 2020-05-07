@@ -25,3 +25,5 @@ stor NOM_FICHIER  > Copie le fichier (répertoire courant client) dans le réper
 pwd  > Affiche la position dans l'arborescence
 
 quit > deconnexion propre et exit du programme
+
+scmd COMMANDE > envoyer une commande en brut. PAS D'ARGUMENT (non implementé)
