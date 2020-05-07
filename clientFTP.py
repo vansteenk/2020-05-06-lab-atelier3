@@ -12,11 +12,11 @@ from getpass import getpass
 
 
 #Fonction nanuel, pour aider avec les differentes commandes
-def help (x,y,z): #lire le fichier help.txt
+def help (connect): #lire le fichier help.txt
 	with open("help.txt", "r") as fichier:
 		print(fichier.read())
 
-def creer (connect, chemin, x): #MKD (dossier)
+def creer (connect, chemin): #MKD (dossier)
 	mkd=connect.mkd(chemin)
 	print (mkd)
 
@@ -24,35 +24,35 @@ def renommer (connect, fromname, toname): #RNFR
 	rename=connect.rename(fromname, toname)
 	print (rename)
 
-def supprimerFichier (connect, filename, x): #DELE 
+def supprimerFichier (connect, filename): #DELE 
 	
 	connect.delete(filename) #fichier
 
-def supprimerDossier (connect, dirname, x): #RMD 
+def supprimerDossier (connect, dirname): #RMD 
 	
 	connect.rmd(dirname) #dossier
 
-def lister (connect, dirname, x): #LIST
+def lister (connect, dirname): #LIST
 	rep=connect.dir(dirname)
 	print (rep)
 
-def envoyer (connect, fichier, x): #STOR
+def envoyer (connect, fichier): #STOR
 
 	ouverture = open(fichier, 'rb') # on ouvre le fichier 
 	connect.storbinary('STOR '+fichier, ouverture) # ici (où connect est encore la variable de la connexion), on indique le fichier à envoyer
 	ouverture.close() # on ferme le fichier
 
-def localisation (connect, x, y): #PWD
+def localisation (connect): #PWD
 
 	path=connect.pwd() #on retourne le chemin du dossier courant
 	print (path)
 
-def se_deplacer (connect, chemin, x): #CWD
+def se_deplacer (connect, chemin): #CWD
 
 	connect.cwd(chemin) # On se deplace dans le repertoire indiqué
 	localisation(connect,0,0)
 
-def deconnexion (connect, x, y):
+def deconnexion (connect):
 
 	try:
 		connect.quit() #On se deconnecte proprement
@@ -105,28 +105,26 @@ while cmd!="quit" :
 	commande=input(":>>")
 
 	cmdsplit=commande.split() # On sépare les commandes des arguments potentiels
-
-	if len(cmdsplit)==0 or len(cmdsplit)>3:
-		print("Erreur")
-
-	elif len(cmdsplit)==1:
+		
+	try:
 		cmd=cmdsplit[0]
 		cmd=cmd.lower()
-		arg1=0
-		arg2=0
-	elif len(cmdsplit)==2:
-		cmd=cmdsplit[0]
-		cmd=cmd.lower()
-		arg1=cmdsplit[1]
-		arg2=0
-	elif len(cmdsplit)==3:
-		cmd=cmdsplit[0]
-		cmd=cmd.lower()
-		arg1=cmdsplit[1]
-		arg2=cmdsplit[2]
-
-	func = choix_cmd(cmd)
-	func(connect, arg1, arg2)
+		elif len(cmdsplit)==1: # Aucun argument input par l'utilisateur
+			func = choix_cmd(cmd)
+			func(connect)
+		
+		elif len(cmdsplit)==2: # 1 seul argument en input
+			arg1=cmdsplit[1]
+			func = choix_cmd(cmd)
+			func(connect, arg1)
+		
+		elif len(cmdsplit)==3: # 2 arguments en input
+			arg1=cmdsplit[1]
+			arg2=cmdsplit[2]
+			func = choix_cmd(cmd)
+			func(connect, arg1, arg2)
+	except:
+		print("Erreur. Tapez help.")
 
 
 
