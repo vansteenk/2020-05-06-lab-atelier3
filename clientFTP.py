@@ -109,7 +109,7 @@ while cmd!="quit" :
 	try:
 		cmd=cmdsplit[0]
 		cmd=cmd.lower()
-		elif len(cmdsplit)==1: # Aucun argument input par l'utilisateur
+		if len(cmdsplit)==1: # Aucun argument input par l'utilisateur
 			func = choix_cmd(cmd)
 			func(connect)
 		
