@@ -17,10 +17,10 @@ Lab Client FTP Python
 
 Préparation d’une deuxième machine Debian, cette machine devra être sur le même réseau que la première. Une machine aura pour rôle le serveur FTP, tandis que la deuxième sera le client ftp. Réaliser un script python qui jouera le rôle de client ftp.
 
-- [x] Pouvoir se connecter, donc :
-  - [x] Entrer le nom d’hôte
-  - [x] Le nom d’utilisateur
-  - [x] Et le mot de passe, très important !
+* - [x] Pouvoir se connecter, donc :
+  * - [x] Entrer le nom d’hôte
+  * - [x] Le nom d’utilisateur
+  * - [x] Et le mot de passe, très important !
 
 - [x] Pouvoir envoyer une commande (nous les listerons un peu plus bas)
 - [x] Pouvoir taper une commande, mais avec des arguments ! (Petite nuance)
