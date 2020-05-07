@@ -13,7 +13,7 @@ Lab Client FTP Python
 
 ## Enoncé
 
-#### 1- Mise en place d’un client FTP avec Python
+#### 1- Mise en place d’un client FTP avec Python - [x]
 
 Préparation d’une deuxième machine Debian, cette machine devra être sur le même réseau que la première. Une machine aura pour rôle le serveur FTP, tandis que la deuxième sera le client ftp. Réaliser un script python qui jouera le rôle de client ftp.
 
@@ -22,18 +22,18 @@ Préparation d’une deuxième machine Debian, cette machine devra être sur le 
   * - [x] Le nom d’utilisateur
   * - [x] Et le mot de passe, très important !
 
-- [x] Pouvoir envoyer une commande (nous les listerons un peu plus bas)
-- [x] Pouvoir taper une commande, mais avec des arguments ! (Petite nuance)
+* - [x] Pouvoir envoyer une commande (nous les listerons un peu plus bas)
+* - [x] Pouvoir taper une commande, mais avec des arguments ! (Petite nuance)
 
 
 On doit pouvoir :
-- [x] Créer
-- [x] Renommer
-- [ ] Déplacer
-- [x] Supprimer des fichiers / dossiers
-- [x] Se déplacer entre les répertoires
-- [x] Lister leur contenu
-- [x] Envoyer un fichier sur notre serveur
+* - [x] Créer
+* - [x] Renommer
+* - [ ] Déplacer
+* - [x] Supprimer des fichiers / dossiers
+* - [x] Se déplacer entre les répertoires
+* - [x] Lister leur contenu
+* - [x] Envoyer un fichier sur notre serveur
 
 En voici donc la liste :
 - [x] CWD *(change current directory) pour changer de répertoire de travail*
@@ -44,5 +44,6 @@ En voici donc la liste :
 - [x] RNFR *(rename a file from (name …)) pour renommer un répertoire X en …*
 - [x] STOR *(store a file) pour envoyer un fichier sur le serveur.*
 
-#### 2- Autre atelier en bonus
+#### 2- Autre atelier en bonus - [ ]
+
 Comment, via python, envoyer des ordres (installer des packages , lister des fichiers…) sur la machine serveur, à partir de la machine cliente? Les scripts devront être déposés sur un dépôt GitHub en accès publique.
